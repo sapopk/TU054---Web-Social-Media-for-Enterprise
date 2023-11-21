@@ -1,0 +1,1028 @@
+/* 
+    Student ID: B00139596
+    Student Name: Johny Ramos Assuncao
+    Course: [TU054] Computer System Management
+    Module: Web & Social Media for Enterprise 
+    Theme: Assignment #1 
+*/
+
+/* Palette Colors */
+:root {
+    /* CSS HEX */
+	--white-Hex: #ffffff;
+	--black-Hex: #000000ff;
+    --battleship-gray-HEX: #898989;
+    --honolulu-blue-HEX: #007cc3;
+    --russian-violet-HEX: #372261;
+    --harvest-gold-HEX: #DF9926;
+    --plum-HEX: #963596;
+    --blue-violet-HEXx: #783fed;
+    --tomato-HEX: #F16C51;
+    
+	/* CSS RGBA */
+	--white-RGBA: rgba(255, 255, 255, 1);
+	--black-RGBA: rgba(0, 0, 0, 1);
+    --battleship-gray-RGBA: rgb(137, 137, 137, 1);
+    --honolulu-blue-RGBA: rgba(0, 124, 195, 1);
+    --russian-violet-RGBA: rgba(55, 34, 97, 1);
+    --harvest-gold-RGBA: rgba(223, 153, 38, 1);
+    --plum-RGBA: rgba(150, 53, 150, 1);
+    --blue-violet-HRGBA: rgba(120, 63, 237, 1);
+    --tomato-RGBA: rgba(241, 108, 81, 1);
+
+    /* CSS RGBA - Transparent */
+    --plum-trans-RGBA: rgba(236, 11, 221, .5);  
+
+    /* CSS FILTER */
+    --white-filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(20deg) brightness(118%) contrast(114%);
+	--black-filter: brightness(0) saturate(100%) invert(0%) sepia(3%) saturate(7488%) hue-rotate(123deg) brightness(103%) contrast(104%);
+    --battleship-gray-filter: brightness(0) saturate(100%) invert(61%) sepia(6%) saturate(3%) hue-rotate(323deg) brightness(89%) contrast(80%);
+    --honolulu-blue-filter: brightness(0) saturate(100%) invert(22%) sepia(94%) saturate(3126%) hue-rotate(187deg) brightness(100%) contrast(101%);
+    --russian-violet-filter: brightness(0) saturate(100%) invert(19%) sepia(18%) saturate(2884%) hue-rotate(225deg) brightness(88%) contrast(103%);
+    --tomato-filter: brightness(0) saturate(100%) invert(58%) sepia(98%) saturate(384%) hue-rotate(357deg) brightness(92%) contrast(89%);
+}
+/* End ofPalette Colors */
+
+/* Global Font Family */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); */
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+/* End of Global Font Family */
+
+/* Nav/Overlay Button Design */
+
+.line1, .line2, .line3 {
+    width: 23px;
+    height: 2px;
+    margin: 5px;
+    transition: all .6s;
+}
+
+.change .line1 {
+    transform: rotate(-45deg) translate(-4px, 6px);
+}
+
+.change .line2 {
+    opacity: 0;
+}
+
+.change .line3 {
+    transform: rotate(45deg) translate(-4px, -6px);
+}
+
+.sideBarNav {
+    width: 200px;
+}
+
+.nav-item {
+    cursor: pointer;
+}
+
+.sideBarLinks {
+    color: var(--battleship-gray-HEX);
+    transition: all .3s ease-in-out;
+}
+
+.nav-item:hover .sideBarLinks {
+    color: var(--black-RGBA);
+}
+
+/* End Of Nav/Overlay Button Design */
+
+/* Overlay */
+
+#child-0 {
+    display: none;
+    z-index: 999;
+    background-color: var(--white-RGBA);
+    transition: all .5s;
+}
+
+.overlay-side {
+    background: url(../images/overlay/side-pattern-bg.png) no-repeat center center /cover;
+}
+
+.overlay-mid-1,
+.overlay-mid-2,
+.overlay-mid-3 {
+    height: 100vh;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.overlay-mid-1:hover,
+.overlay-mid-2:hover,
+.overlay-mid-3:hover {
+    opacity: .78;
+}
+
+.sub-menu {
+    display: none;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.sub-item {
+    color: var(--battleship-gray-HEX);
+    transition: .5s ease-in-out;
+    font-size: 15px;
+}
+
+.sub-item:hover {
+    color: var(--white-RGBA);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.angleArrow {
+    transition: .3s ease;
+}
+.arrowRotate {
+    transform: rotate(90deg);
+}
+
+.cardSmallOverlay {
+    transition: all .3s ease-in-out;
+}
+
+.cardSmallOverlay:hover {
+    opacity: .78;
+}
+
+.overlay-mid-1 {
+    background: url(../images/overlay/side-bar-1.jpg) no-repeat center center /cover;
+}
+
+.overlay-mid-2 {
+    background: url(../images/overlay/side-bar-2.jpg) no-repeat center center /cover;
+}
+
+.overlay-mid-3 {
+    background: url(../images/overlay/side-bar-3.jpg) no-repeat center center /cover;
+}
+
+/* Enf of Overlay */
+
+/* Header - Navbar - Items */
+
+#nav-header {
+    transition: all .7s;
+}
+
+.customer-navHeader {
+    padding: 5px 70px;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .7));
+}
+
+.menu-item {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.menu-item:hover {
+    color: var(--battleship-gray-RGBA);
+}
+
+#logo-img {
+    transition: all .8s;
+}
+
+.logoFilter {
+    filter: var(--white-filter);
+}
+
+.dropdown-item {
+    color: var(--black-Hex);
+    transition: .2s ease-in;
+}
+
+.dropdown-item:hover {
+    color: var(--white-Hex);
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.dropHeader {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0;
+    margin: 0;
+}
+
+/* End of Header - Navbar - Items */
+
+
+/* !! -- Index HTML File From here */
+
+/* Bookmarks - List-group */
+
+.left-navigation {
+    position: relative;
+}
+
+.sticky-left {
+    position: fixed;
+    width: 120px;
+    display: block;
+    top: 25%;
+    z-index: 1;
+}
+
+.left-menu  {
+    cursor: pointer;
+}
+
+.slideFade {
+    font-family: 'PT Sans', sans-serif;
+    /* font-size: 15px; */
+    color: var(--white-RGBA);
+    display: none;
+    transition: opacity 0.9s ease-in-out;
+}
+
+.left-link:hover .slideFade {
+    display: block;
+}
+
+.left-link {
+    background-color: var(--white-RGBA);
+    width: 40px;
+    height: 1px;
+    display: block;
+    transition: width 0.3s ease-in;
+}
+
+.left-menu:hover .left-link {
+    display: block;
+    width: 70px;
+    height: 3px;
+    transform: scale(1.1);
+}
+
+.slideActive {
+    display: inline-block;
+}
+
+.left-active {
+    display: block;
+    width: 70px;
+    height: 3px;
+    transform: scale(1.1);
+    .slideFade {
+        display: block;
+    }
+}
+
+/* Bookmarks - List-group */
+
+/* Carousel Images - Section */
+.carousel-bg1 {
+    height: 100vh;
+    background: url(../images/index/carousel/carousel-1.jpeg) no-repeat center center /cover;
+}
+
+@media (max-width: 1080px) {
+    .carousel-bg1 {
+        height: 100vh;
+        background: url(../images/index/carousel/carousel-1.jpeg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-bg1 {
+        height: 80vh;
+        background: url(../images/index/carousel/carousel-1.jpeg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-bg1 {
+        height: 60vh;
+        background: url(../images/index/carousel/carousel-mob-1.jpeg) no-repeat center center /cover;
+    }
+}
+
+.carousel-bg2 {
+    height: 100vh;
+    background: url(../images/index/carousel/carousel-2.jpeg) no-repeat center center /cover;
+}
+
+@media (max-width: 1080px) {
+    .carousel-bg2 {
+        height: 100vh;
+        background: url(../images/index/carousel/carousel-2.jpeg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-bg2 {
+        height: 80vh;
+        background: url(../images/index/carousel/carousel-2.jpeg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-bg2 {
+        height: 60vh;
+        background: url(../images/index/carousel/carousel-mob-2.jpeg) no-repeat center center /cover;
+    }
+}
+
+.carousel-bg3 {
+    height: 100vh;
+    background: url(../images/index/carousel/carousel-3.jpeg) no-repeat center center /cover;
+}
+
+@media (max-width: 1080px) {
+    .carousel-bg3 {
+        height: 100vh;
+        background: url(../images/index/carousel/carousel-3.jpeg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-bg3 {
+        height: 80vh;
+        background: url(../images/index/carousel/carousel-3.jpeg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-bg3 {
+        height: 60vh;
+        background: url(../images/index/carousel/carousel-mob-3.jpeg) no-repeat center center /cover;
+    }
+}
+/* Carousel Images - Section */
+
+/* Key Offering - Section */
+.keyOfferings {
+    background-color: var(--russian-violet-RGBA);
+}
+
+.keyOff-links {
+    background-color: rgb(255, 255, 255, .1);
+    color: var(--white-RGBA);
+    transition: all .3s;
+}
+
+.keyOff-links:focus {
+    background-color: var(--black-RGBA);
+    color: var(--white-RGBA);
+}
+
+.keyOff-links:hover {
+    color: var(--honolulu-blue-RGBA);
+}
+
+#SPOverlay,
+#SFOverlay,
+#CSOverlay,
+#HROverlay,
+#APCOverlay,
+#MOOverlay,
+#MDMOverlay,
+#EOverlay,
+#ASOverlay,
+#BAOverlay,
+#DISOverlay,
+#BTSOverlay,
+#RPAOverlay,
+#LPMOverlay {
+    display: none;
+}
+
+.cardSize {
+    height: 300px;
+}
+
+@media screen and (max-width: 770px) {
+    .cardSize {
+        height: auto;
+    }
+}
+
+.subTitleP {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.recOverlay {
+    position: absolute;
+    top: 80px;
+    left: 25px;
+    background-color: var(--harvest-gold-RGBA);
+    padding: 2px 4px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--white-RGBA);
+}
+
+.recOverlay::after {
+    position: absolute;
+    content: "";
+    right: -20px;
+    top: 0;
+    height: 0;
+    width: 0;
+    border-left: 0 solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid var(--harvest-gold-RGBA);
+}
+
+.cardLinks {
+    font-family: 'Cutive Mono', monospace;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18px;
+    color: var(--black-RGBA);
+    text-decoration: none;
+    transition: all .2s;
+    letter-spacing: 1px;
+}
+
+.cardLinks:hover {
+    color: var(--honolulu-blue-RGBA);
+}
+
+/* Enf of Key Offering */
+
+/* The Next - Section */
+.Subtitle {
+    line-height: 50px;
+}
+/* End of The Next - Section */
+
+/* About Us - Section */
+.underline-divider {
+    margin: 1rem 0;
+    color: inherit;
+    border: 0;
+    border-top: 1px solid;
+    opacity: .25;
+}
+
+.AUSubText-bg {
+    background: rgba(0, 0, 0, .3);
+}
+
+.AUSubText {
+    font-size: 25px;
+}
+/* End of About Us - Section */
+
+/* Careers - Section */
+.hoverBtn {
+    background: var(--black-RGBA);
+    color: var(--white-RGBA);
+    transition: .25s ease-in-out;
+}
+
+.hoverBtn:hover {
+    background: var(--white-RGBA);
+    color: var(--black-RGBA);
+    border: 1px solid var(--black-RGBA);
+}
+/* End of Careers - Section */
+
+/* Pink - Section */
+.pink-bg {
+    background: var(--plum-RGBA);
+}
+
+.transBorder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.transBorder {
+    cursor: pointer;
+    height: 200px;
+    font-size: 25px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    transition: .3s ease-in-out;
+}
+
+.transBorder:hover {
+    background: rgba(255,255,255, .5);
+}
+
+.hoverText {
+    color: var(--white-RGBA);
+    transition: .3s ease-in-out;
+}
+
+.transBorder:hover .hoverText {
+    color: var(--black-RGBA);
+}
+
+.pinkHover {
+    background: var(--black-RGBA);
+    color: var(--white-RGBA);
+    transition: .25s ease-in-out;
+}
+
+.pinkHover:hover {
+    border: 1px solid var(--black-RGBA);
+    background: rgba(255,255,255, 0);
+    color: var(--black-RGBA);
+}
+/* End of Pink - Section */
+
+/* Footer - Section */
+.footerBg {
+    background: #F8F8F8;
+}
+
+.footDrop{
+    max-height: 200px;
+    width: 100%;
+    overflow-y: scroll;
+}
+/* End of Footer - Section */
+
+
+/* !! -- Careers HTML File From here */
+
+/* Careers Main - Section */
+.careerBg {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background: url(../images/Careers/careers-bg.jpg);
+}
+
+@media (max-width: 768px) {
+    .careerBg {
+        height: 80vh;
+    }
+
+    .careeRImgBg {
+        background: url(../images/Careers/careers-bg.jpg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 576px) {
+    .careerBg {
+        height: 60vh;
+    }
+
+    .careeRImgBg {
+        background: url(../images/Careers/careers-bg.jpg) no-repeat center center /cover;
+    }
+}
+
+.applyColor {
+    color: var(--blue-violet-HRGBA);
+    transition: .3s ease-in-out;
+}
+
+.applyColor:hover {
+    color: var(--plum-trans-RGBA);
+}
+
+.arrImg {
+    filter: var(--purple-blue-filter);
+    height: 60px;
+    width: 60px;
+    transition: all .3s ease-in-out;
+}
+
+.arrImg:hover {
+    filter: var(--pink-filter);
+}
+/* End of Careers Main - Section */
+
+
+/* !! -- Live Enterprise HTML File From here */
+
+/* Live Enterprise - Section */
+#logoImg {
+    filter: var(--white-filter);
+}
+
+.img1st {
+    height: 100vh;
+    background: url(../images/Live_Enterprise/Img-1st.jpg) no-repeat center center /cover;
+}
+
+@media (max-width: 1080px) {
+    .img1st {
+        height: 100vh;
+        background: url(../images/Live_Enterprise/Img-1st.jpg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .img1st {
+        height: 80vh;
+        background: url(../images/Live_Enterprise/Img-1st.jpg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 576px) {
+    .img1st {
+        height: 60vh;
+        background: url(../images/Live_Enterprise/Img-1st.jpg) no-repeat center center /cover;
+    }
+}
+
+.img2nd {
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background: var(--harvest-gold-RGBA);
+}
+
+.img3rd {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background: url(../images/Live_Enterprise/Img-2nd.jpg) no-repeat center center /cover;
+}
+
+@media (max-width: 1080px) {
+    .img3rd {
+        height: 100vh;
+        background: url(../images/Live_Enterprise/Img-2nd.jpg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .img3rd {
+        height: 80vh;
+        background: url(../images/Live_Enterprise/Img-2nd.jpg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 576px) {
+    .img3rd {
+        height: 60vh;
+        background: url(../images/Live_Enterprise/Img-2nd.jpg) no-repeat center center /cover;
+    }
+}
+
+.img4th {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background: url(../images/Live_Enterprise/Img-3rd.jpg) no-repeat center center /cover;
+}
+
+@media (max-width: 1080px) {
+    .img4th {
+        height: 100vh;
+        background: url(../images/Live_Enterprise/Img-3rd.jpg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .img4th {
+        height: 80vh;
+        background: url(../images/Live_Enterprise/Img-3rd.jpg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 576px) {
+    .img4th {
+        height: 60vh;
+        background: url(../images/Live_Enterprise/Img-3rd.jpg) no-repeat center center /cover;
+    }
+}
+/* End of Live Enterprise - Section */
+
+
+/* !! -- Services HTML File From here */
+
+/* Services Main - Secion */
+
+.SerImg1st {
+    height: 100vh;
+    background: url(../images/Services/SerImg1st.jpg) no-repeat center center /cover;
+}
+
+@media (max-width: 1080px) {
+    .SerImg1st {
+        height: 100vh;
+        background: url(../images/Services/SerImg1st.jpg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .SerImg1st {
+        height: 80vh;
+        background: url(../images/Services/SerImg1st.jpg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 576px) {
+    .SerImg1st {
+        height: 60vh;
+        background: url(../images/Services/SerImgMob1st.jpg) no-repeat center center /cover;
+    }
+}
+
+.serOver {
+    position: absolute;
+    left: 15px;
+    background-color: var(--black-RGBA);
+    padding: 2px 8px;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.serOver::after {
+    position: absolute;
+    content: "";
+    right: -20px;
+    top: 0;
+    height: 0;
+    width: 0;
+    border-left: 0 solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 26px solid var(--black-RGBA);
+}
+
+.serHoverBtn {
+    background-image: linear-gradient(var(--black-Hex),var(--black-Hex));
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    border: 1px solid var(--white-RGBA);
+    transition: .4s;
+}
+
+.serHoverBtn:hover {
+    background-size: 100% 100%;
+    border: 1px solid var(--black-RGBA);
+}
+
+
+.SerImg2nd {
+    background: url(../images/Services/SerImg2nd.png) no-repeat center center /cover;
+}
+
+
+.Serimg3rd {
+    background: var(--tomato-RGBA) no-repeat center center /cover;
+}
+
+.serCardSize {
+    height: 450px;
+}
+
+.serOverlay {
+    position: absolute;
+    top: 80px;
+    left: 25px;
+    background-color: var(--harvest-gold-RGBA);
+    padding: 2px 4px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--white-RGBA);
+}
+
+.serOverlay::after {
+    position: absolute;
+    content: "";
+    right: -20px;
+    top: 0;
+    height: 0;
+    width: 0;
+    border-left: 0 solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid var(--harvest-gold-RGBA);
+}
+
+/* End of Services Main - Secion */
+
+
+/* !! -- Industries HTML File From here */
+
+/* Industries Main - Section */
+.InduImg1st {
+    height: 100vh;
+    background: url(../images/Industries/IndImg1st.jpg) no-repeat center center /cover;
+}
+
+@media (max-width: 1080px) {
+    .InduImg1st {
+        height: 100vh;
+        background: url(../images/Industries/IndImg1st.jpg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .InduImg1st {
+        height: 80vh;
+        background: url(../images/Industries/IndImg1st.jpg) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 576px) {
+    .InduImg1st {
+        height: 60vh;
+        background: url(../images/Industries/IndMob1st.png) no-repeat center center /cover;
+    }
+}
+
+.subImgsInd {
+    height: 325px;
+}
+
+.subBg0,
+.subBg1,
+.subBg2,
+.subBg3,
+.subBg4,
+.subBg5,
+.subBg6 {
+    cursor: pointer;
+}
+
+.subBg1 {
+    background: #8888888e;
+}
+
+.subBg2 {
+    background: var(--honolulu-blue-RGBA);
+}
+
+.subBg3 {
+    background: #8888888e;
+    height: 405px;
+}
+
+.subBg4 {
+    background: var(--plum-RGBA);
+    height: 405px;
+}
+
+.subBg5Blur {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.subBg6 {
+    background: var(--harvest-gold-HEX);
+}
+
+.slideBtn,
+.slideUp {
+    transition: .5s ease-in-out;
+}
+
+.subBg0:hover .slideUp {
+    transform: translateY(-10px);
+}
+
+.subBg1:hover .slideBtn,
+.subBg2:hover .slideBtn,
+.subBg3:hover .slideBtn,
+.subBg4:hover .slideBtn,
+.subBg5:hover .slideBtn,
+.subBg6:hover .slideBtn {
+    transform: translateX(10px);
+}
+/* End of Industries Main - Section */
+
+
+/* !! -- Location HTML File From here */
+
+/* Location Main - Section */
+
+.locaBg {
+    height: 30vh;
+    background: var(--blue-violet-HRGBA) no-repeat center center /cover;
+}
+
+.locHed {
+    color: var(--battleship-gray-RGBA);
+}
+
+.letHover {
+    position: relative;
+}
+
+.letHover:after {
+    content: "";
+    position: absolute;
+    background-color: var(--harvest-gold-HEX);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s ease-in-out;
+}
+
+.bgLet:hover .letHover:after {
+    width: 100%;
+}
+
+.locaBg3 {
+    background: #333333;
+}
+
+.qLoc3rd {
+    cursor: pointer;
+}
+
+.qLoc3rdItems {
+    transition: .3s ease-in-out;
+}
+
+.qLoc3rdItems:hover {
+    background: var(--harvest-gold-HEX);
+}
+
+.locCardHover {
+    cursor: pointer;
+    transition: all .7s ease-in-out;
+}
+
+.qLoc3rdActive {
+    background: var(--harvest-gold-HEX);
+}
+
+.locCardAni > span {
+    color: var(---white);
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    display: block;
+}
+
+.locCardAni {
+    transition: all .7s ease-in-out;
+}
+
+.locCardHover:hover {
+    opacity: .5;
+}
+
+.locCardHover:hover .locCardAni {
+    transform: translateY(-5px);
+}
+/* Location Main - Section */
+
+
+/* !! -- Email Form HTML File From here */
+
+/* Email Form - Section */
+.form-img {
+    height: 100vh;
+    background: url(../images/contactform/form-img.png) no-repeat center center /cover;
+}
+
+@media (max-width: 1080px) {
+    .form-img {
+        height: 100vh;
+        background: url(../images/contactform/form-img.png) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-img {
+        height: 80vh;
+        background: url(../images/contactform/form-img.png) no-repeat center center /cover;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-img {
+        height: 100vh;
+        background: url(../images/contactform/form-mob-img.png) no-repeat center center /cover;
+    }
+}
+
+.inputF {
+    background: transparent;
+    border-color: transparent;
+    border-bottom: 2px solid #ccc;
+    transition: all .8s;
+}
+
+.inputF:focus {
+    background: transparent;
+    border-color: transparent;
+    color: var(--white-Hex);
+    box-shadow: none;
+    border-bottom: 2px solid var(--harvest-gold-HEX);
+}
+
+
+.inputF::placeholder {
+    color: var(--white-RGBA);
+    opacity: 1; 
+  }
+
+.inputF:placeholder-shown + label {
+    transform: translate(20px, 20px);
+    color: var(--white-RGBA);
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Email Form - Section */
